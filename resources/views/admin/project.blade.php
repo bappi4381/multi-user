@@ -33,9 +33,39 @@
     </div>
     <!-- Container wrapper -->
 </nav>
-  <!-- Navbar -->
-   
-   
 </div>
+
+<section>
+  <div class="container">
+      <div class="bg-black py-2"><h3 class="text-light font-weight-bold px-2">Total Users</h3></div>
+      <div class="py-5">
+          <table class=" class="table table-bordered " style="border-collapse: collapse; border-spacing: 0; width: 100%;"">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                 @foreach ($posts as $post)
+                <tr>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{ $post->name }}</td>
+                  <td>{{ $post->title }}</td>
+                  <td>
+                    <a href="{{ route("admin.details",['id' => $post->id]) }}" class="btn btn-success">Details</a>
+                    <a href="" class="btn btn-danger">Delete</a>
+                  <td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+      </div>
+      
+  </div>
+</section>
+
 
 @endsection

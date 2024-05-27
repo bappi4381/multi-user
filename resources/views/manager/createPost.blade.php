@@ -72,7 +72,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label>Discription</label>
-                                    <textarea id="summernote" name="discription"></textarea>
+                                    <textarea id="summernote" name="description"></textarea>
                                 </div>
                             </div>
                             

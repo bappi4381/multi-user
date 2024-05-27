@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use App\Models\Post;
 class AdminController extends Controller
 {
     public function adminHome()
@@ -19,11 +19,20 @@ class AdminController extends Controller
     }
     public function adminProject()
     {
-        return view('admin.project');
+        $posts=Post::all();
+        return view('admin.project',compact("posts"));
     }
     public function adminProfile()
     {
+
         return view('admin.profile');
     }
+
+    public function detail($id)
+    {
+        $post = Post::find($id);
+        return view('admin.details',compact("post"));
+    }
+    
 
 }

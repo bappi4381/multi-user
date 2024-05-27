@@ -39,6 +39,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [AdminController::class, 'adminHome'])->name('admin.home');
     Route::get('/admin/team', [AdminController::class, 'adminTeam'])->name('admin.team');
     Route::get('/admin/project', [AdminController::class, 'adminProject'])->name('admin.project');
+    Route::get('/admin/post/details/{id}', [AdminController::class, 'detail'])->name('admin.details');
+
     Route::get('/admin/profile', [AdminController::class, 'adminProfile'])->name('admin.profile');
 });
   
@@ -50,5 +52,4 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/home', [ManagerController::class, 'managerHome'])->name('manage.home');
     Route::get('/manager/Create-post', [ManagerController::class, 'managePost'])->name('manage.post');
     Route::Post('/manager/post', [ManagerController::class, 'createPost'])->name('createPost');
-    
 });

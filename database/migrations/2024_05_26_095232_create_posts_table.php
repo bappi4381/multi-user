@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('title');
             $table->string('video');
-            $table->text('description');
+            $table->text('description', 65535)->nullable();
+            $table->boolean('published')->default(0); 
             $table->timestamps();
         });
     }

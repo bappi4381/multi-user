@@ -14,6 +14,7 @@ class ManagerController extends Controller
     public function managePost(){
          return view ('manager.createPost');
     }
+
     public function createPost(Request $request)
     {
     
@@ -21,7 +22,7 @@ class ManagerController extends Controller
                 'name'      => 'required',
                 'title' => 'required',
                 'video' => 'required|file|mimetypes:video/mp4',
-                'discription'=> 'required',
+                
             ]);
            
             $categori       = $request->file('video');
@@ -32,10 +33,11 @@ class ManagerController extends Controller
                 'name' => $request->name,
                 'title' => $request->title,
                 'video' => $path,
-                'discription'=>  $request->discription,
+                'description'=>  $request->description,
             ]);
             
             return redirect()->back()->with('success', 'Post has been created successfully.');
         
     }
+   
 }
