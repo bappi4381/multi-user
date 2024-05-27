@@ -39,8 +39,5 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function managerHome()
-    {
-        return view('managerHome');
-    }
+    
 }

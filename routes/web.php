@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
   
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ManagerController;
   
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\AdminController;
 */
   
 Route::get('/', function () {
-    return view('welcome');
+    return view('userHome');
 });
   
 Auth::routes();
@@ -46,5 +47,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
   
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('/manager/home', [ManagerController::class, 'managerHome'])->name('manage.home');
+    Route::get('/manager/Create-post', [ManagerController::class, 'managePost'])->name('manage.post');
+    Route::Post('/manager/post', [ManagerController::class, 'createPost'])->name('createPost');
+    
 });

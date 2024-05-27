@@ -47,7 +47,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label  class="form-label">User Name</label>
-                                        <input type="text" class="form-control" value="" name="uname" required>
+                                        <input type="text" class="form-control" value="{{ Auth::user()->name }}" name="uname" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -59,7 +59,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label  class="form-label">Email</label>
-                                        <input type="email" class="form-control" value="" name="email" required>
+                                        <input type="email" class="form-control" value="{{ Auth::user()->email }}" name="email" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -96,8 +96,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                               <div class="col-md-6">
-                                <img src="..." class="img-fluid rounded-start" alt="...">
-                          
+                                <img src="{{asset('/')}}img/bg1.jpg" class="img-fluid rounded-start" alt="...">
                               </div>
                               <div class="col-md-6">
                                 <div class="card-body">
@@ -109,6 +108,7 @@
                                   <p class="card-text text-left ">Address:</p>
                                   <p class="card-text text-left "><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                                 </div>
+                                <button class=" text-left btn btn-primary">Update Profile</button>
                               </div>
                             </div>
                           </div>
